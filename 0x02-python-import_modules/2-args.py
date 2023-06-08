@@ -1,12 +1,18 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
     import sys
-    args_vector = len(sys.argv)
-    if (args_vector <= 1):
-        print("{} arguements.".format(args_vector - 1))
-    elif (args_vector == 2):
-        print("{} arguement:".format(args_vector - 1))
+    i = len(sys.argv) - 1
+
+    if i == 0:
+        print("{} arguments.".format(i))
+    elif i == 1:
+        print("{} argument:".format(i))
     else:
-        ("{} arguements:".format(args_vector - 1))
-    for arg_c in range(1, args_vector):
-        print("{}: {}".format(arg_c, sys.argv[arg_c]))
+        print("{} arguments:".format(i))
+
+    if i >= 1:
+        i = 0
+        for arg in sys.argv:
+            if i != 0:
+                print("{}: {}".format(i, arg))
+            i += 1
